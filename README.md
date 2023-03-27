@@ -32,10 +32,10 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-####Overall Walkthrough
+#### Overall Walkthrough
 ![berealFirst](https://user-images.githubusercontent.com/92804326/227985318-da41da0f-c455-4552-9661-7607ea2bbe88.gif)
 
-####Walkthrough of the feed with more than 10 photos
+#### Walkthrough of the feed with more than 10 photos
 ![BeREalSecond](https://user-images.githubusercontent.com/92804326/227985699-717f933e-b47e-4963-8c54-95bf9ee7999c.gif)
 
 GIF created with [Kap](https://getkap.co/) for macOS
