@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ParseSwift
 
 class FeedViewController: UIViewController {
 
@@ -13,7 +14,7 @@ class FeedViewController: UIViewController {
     
     
     @IBOutlet weak var tableView: UITableView!
-    
+    private let refreshControl = UIRefreshControl()
     
     
     private var posts = [Post]() {
@@ -30,6 +31,8 @@ class FeedViewController: UIViewController {
         tableView.dataSource = self
         tableView.allowsSelection = false
         
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(onPullToRefresh), for: .valueChanged)
     }
     
 
@@ -40,26 +43,37 @@ class FeedViewController: UIViewController {
 
     }
 
-    private func queryPosts() {
+    private func queryPosts(completion: (() -> Void)? = nil) {
        
   
         // 1. Create a query to fetch Posts
         // 2. Any properties that are Parse objects are stored by reference in Parse DB and as such need to explicitly use `include_:)` to be included in query results.
         // 3. Sort the posts by descending order based on the created at date
+        // Get the date for yesterday. Adding (-1) day is equivalent to subtracting a day.
+        // NOTE: `Date()` is the date and time of "right now".
+        let yesterdayDate = Calendar.current.date(byAdding: .day, value: (-1), to: Date())!
+        
+        
         let query = Post.query()
             .include("user")
             .order([.descending("createdAt")])
+
 
         // Fetch objects (posts) defined in query (async)
         query.find { [weak self] result in
             switch result {
             case .success(let posts):
-                // Update local posts property with fetched posts
+                // Update the local posts property with fetched posts
                 self?.posts = posts
             case .failure(let error):
                 self?.showAlert(description: error.localizedDescription)
             }
+
+            // Call the completion handler (regardless of error or success, this will signal the query finished)
+            // This is used to tell the pull-to-refresh control to stop refresshing
+            completion?()
         }
+
 
     }
 
@@ -67,6 +81,14 @@ class FeedViewController: UIViewController {
         showConfirmLogoutAlert()
     }
 
+    @objc private func onPullToRefresh() {
+        refreshControl.beginRefreshing()
+        queryPosts { [weak self] in
+            self?.refreshControl.endRefreshing()
+        }
+    }
+    
+    
     private func showConfirmLogoutAlert() {
         let alertController = UIAlertController(title: "Log out of your account?", message: nil, preferredStyle: .alert)
         let logOutAction = UIAlertAction(title: "Log out", style: .destructive) { _ in
