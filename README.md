@@ -28,7 +28,8 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![ezgif com-resize-4](https://user-images.githubusercontent.com/92804326/229387320-4adead26-22d8-4727-8a62-4a18938149e8.gif)
+![ezgif com-resize-4](https://user-images.githubusercontent.com/92804326/229665649-fa0a5817-0c83-485c-b3bf-f551244872fe.gif)
+
 
 The other features are shown down below in the Project 5 Gifs
 
