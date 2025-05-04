@@ -15,15 +15,6 @@ The following **required** functionality is completed:
 - [x] Users are able to log out and return to sign in page
 - [x] Users are NOT able to see other photos until they upload their own	
  
-The following **optional** features are implemented:
-
-- [ ] User receive notifcation when it is time to post
-- [ ] Users can make comments and view comments in posts	
-
-The following **additional** features are implemented:
-
-- [ ] List anything else that you can get done to improve the app functionality!
-
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
@@ -37,7 +28,7 @@ GIF created with ezgif
 
 ## Notes
 
-I had trouble with making the blur view work and correspond with the date the user posted. I also had trouble making sure the blur view aligned with the image view. I figured both, and other challenges, out by working through the lab.
+I had trouble with making the blur view work and correspond with the date the user posted. I also had trouble making sure the blur view aligned with the image view. I figured out both, along with other challenges, by working through this weeks lab and lesson notes.
 
 ## License
 
@@ -75,16 +66,9 @@ The following **required** functionality is completed:
  
 The following **optional** features are implemented:
 
-- [ ] Users can pull to refresh their feed and see a loading indicator
 - [x] Users can infinite-scroll in their feed to see past the 10 most recent photos
-- [ ] Users can see location and time of photo upload in the feed	
 - [x] User is able to logout
 - [x] User stays logged in when app is closed and open again	
-
-
-The following **additional** features are implemented:
-
-- [ ] List anything else that you can get done to improve the app functionality!
 
 ## Video Walkthrough
 
@@ -101,7 +85,7 @@ GIF created with [Kap](https://getkap.co/) for macOS
 
 ## Notes
 
-I had challenges with allowing the user to log out and stay logged in for a little while. I also had trouble with the constraints, but for both used the lab for help and was able to resolve the issues.
+I had challenges with allowing the user to log out and stay logged in, along with the constraints. For both issues, I utilized the lessons in this weeks lab to troubleshoot and resolve these issues.
 
 ## License
 
