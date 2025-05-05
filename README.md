@@ -1,6 +1,7 @@
 # Project 6 - BeReal Clone
 
 Submitted by: Lauren Galarza
+Codepath Project for Intermediate iOS Development Course
 
 BeReal Clone is an app that mimics the popular app BeReal where different users can create an account to post pictures, either from camera roll or camera, with captions and the dates, along with staying signed in. 
 
@@ -50,6 +51,7 @@ I had trouble with making the blur view work and correspond with the date the us
 # Project 5 - BeReal Clone
 
 Submitted by: Lauren Galarza
+Codepath Project for Intermediate iOS Development Course
 
 BeReal Clone is an app that mimics the popular app BeReal where different users can create an account to post pictures with captions and the dates, along with staying signed in.  
 
